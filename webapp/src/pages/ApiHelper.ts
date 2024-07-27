@@ -2,6 +2,7 @@ import axios from 'axios';
 import { Order, OrderData } from '../components/interfaces';
 
 const INPIPELINE_URL = '/api/orders/inpipeline';
+const PRODUCTS_URL = '/api/products/';
 
 const getInPipelineData = async () => {
   const orderData: OrderData = {
@@ -12,6 +13,7 @@ const getInPipelineData = async () => {
   let errorOccured = false;
   try {
     const response = await axios.get(INPIPELINE_URL);
+    console.log('orders response', response);
     if (response?.status === 200) {
       const { data } = response.data;
       data.forEach((order: Order) => {
@@ -47,26 +49,19 @@ const updateOrderStatus = async (order: Order, newOrderStatus: string) => {
 };
 
 const getActiveProducts = async () => {
-  return [
-    {
-      id: '1',
-      name: 'Product 1',
-      image: '',
-      active: true,
-    },
-    {
-      id: '2',
-      name: 'Product 2',
-      image: '',
-      active: true,
-    },
-    {
-      id: '3',
-      name: 'Product 3',
-      image: '',
-      active: true,
-    },
-  ];
+  try {
+    const response = await axios.get(PRODUCTS_URL);
+    console.log('respomse');
+    console.log(response.data);
+    if (response?.status === 200) {
+      return response.data;
+    } else {
+      throw new Error('Failed to fetch products');
+    }
+  } catch (err) {
+    console.error(err);
+    return [];
+  }
 };
 
 export {

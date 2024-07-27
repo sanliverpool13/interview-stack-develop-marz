@@ -1,14 +1,8 @@
-import React, { useEffect, useState } from "react";
-import PageWrapper from "../PageWrapper";
-import ProductCard from "../../components/ProductCard/ProductCard";
-import { getActiveProducts } from "../ApiHelper";
-
-interface Product {
-  id: string;
-  name: string;
-  image: string;
-  active: boolean;
-}
+import React, { useEffect, useState } from 'react';
+import PageWrapper from '../PageWrapper';
+import ProductCard from '../../components/ProductCard/ProductCard';
+import { getActiveProducts } from '../ApiHelper';
+import { Product } from '../../components/interfaces';
 
 const ProductsPage = () => {
   const [products, setProducts] = useState<Product[]>([]);
@@ -20,6 +14,7 @@ const ProductsPage = () => {
       try {
         setLoading(true);
         const activeProducts = await getActiveProducts();
+        console.log(activeProducts);
         setProducts(activeProducts);
         setLoading(false);
       } catch (err) {
@@ -59,10 +54,10 @@ const ProductsPage = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {products.map((product) => (
           <ProductCard
-            key={product.id}
-            productId={product.id}
-            productName={product.name}
-            productImage={product.image}
+            key={product.ProductID}
+            productId={product.ProductID}
+            productName={product.ProductName}
+            productImage={product.ProductPhotoURL}
           />
         ))}
       </div>
