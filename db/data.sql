@@ -97,7 +97,12 @@ INSERT INTO `Product` VALUES
 (2,'Shoes','https://dummyimage.com/600x400/000/fff','Active'),
 (3,'Pants','https://dummyimage.com/600x400/000/fff','Active'),
 (4,'Shirt','https://dummyimage.com/600x400/000/fff','InActive'),
-(5,'Coat','https://dummyimage.com/600x400/000/fff','InActive');
+(5,'Coat','https://dummyimage.com/600x400/000/fff','InActive'),
+(6,'Bananas','https://dummyimage.com/600x400/000/fff','Active'),
+(7,'Book','https://dummyimage.com/600x400/000/fff','Active'),
+(8,'Backpack','https://dummyimage.com/600x400/000/fff','Active'),
+(9,'Chair','https://dummyimage.com/600x400/000/fff','InActive'),
+(10,'Sunglasses','https://dummyimage.com/600x400/000/fff','InActive');
 /*!40000 ALTER TABLE `Product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

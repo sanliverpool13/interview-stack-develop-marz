@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { Order, OrderData } from '../components/interfaces';
+import { Order, OrderData, Product } from '../components/interfaces';
 
 const INPIPELINE_URL = '/api/orders/inpipeline';
 const PRODUCTS_URL = '/api/products/';
@@ -49,19 +49,23 @@ const updateOrderStatus = async (order: Order, newOrderStatus: string) => {
 };
 
 const getActiveProducts = async () => {
+  let productData: Product[] = [];
+  let errorOccured = false;
   try {
     const response = await axios.get(PRODUCTS_URL);
-    console.log('respomse');
-    console.log(response.data);
+    console.log(response);
     if (response?.status === 200) {
-      return response.data;
+      const { data } = response.data;
+      productData = data;
     } else {
-      throw new Error('Failed to fetch products');
+      const { message } = response.data;
+      throw message;
     }
   } catch (err) {
     console.error(err);
-    return [];
+    errorOccured = true;
   }
+  return { productData, errorOccured };
 };
 
 export {
@@ -70,4 +74,5 @@ export {
   updateOrderStatus,
   UPDATE_STATUS_URL,
   getActiveProducts,
+  PRODUCTS_URL,
 };
