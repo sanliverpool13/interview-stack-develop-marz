@@ -93,16 +93,16 @@ CREATE TABLE `Product` (
 LOCK TABLES `Product` WRITE;
 /*!40000 ALTER TABLE `Product` DISABLE KEYS */;
 INSERT INTO `Product` VALUES 
-(1,'Hat','https://dummyimage.com/600x400/000/fff','Active'),
-(2,'Shoes','https://dummyimage.com/600x400/000/fff','Active'),
-(3,'Pants','https://dummyimage.com/600x400/000/fff','Active'),
-(4,'Shirt','https://dummyimage.com/600x400/000/fff','InActive'),
-(5,'Coat','https://dummyimage.com/600x400/000/fff','InActive'),
-(6,'Bananas','https://dummyimage.com/600x400/000/fff','Active'),
-(7,'Book','https://dummyimage.com/600x400/000/fff','Active'),
-(8,'Backpack','https://dummyimage.com/600x400/000/fff','Active'),
-(9,'Chair','https://dummyimage.com/600x400/000/fff','InActive'),
-(10,'Sunglasses','https://dummyimage.com/600x400/000/fff','InActive');
+(1,'Hat','https://dummyimage.com/600x400/000/fff&text=Hat','Active'),
+(2,'Shoes','https://dummyimage.com/600x400/000/fff&text=Shoes','Active'),
+(3,'Pants','https://dummyimage.com/600x400/000/fff&text=Pants','Active'),
+(4,'Shirt','https://dummyimage.com/600x400/000/fff&text=Shirt','InActive'),
+(5,'Coat','https://dummyimage.com/600x400/000/fff&text=Coat','InActive'),
+(6,'Bananas','https://dummyimage.com/600x400/000/fff&text=Bananas','Active'),
+(7,'Book','https://dummyimage.com/600x400/000/fff&text=Book','Active'),
+(8,'Backpack','https://dummyimage.com/600x400/000/fff&text=Backpack','Active'),
+(9,'Chair','https://dummyimage.com/600x400/000/fff&text=Chair','InActive'),
+(10,'Sunglasses','https://dummyimage.com/600x400/000/fff&text=Sunglasses','InActive');
 /*!40000 ALTER TABLE `Product` ENABLE KEYS */;
 UNLOCK TABLES;
 /*!40103 SET TIME_ZONE=@OLD_TIME_ZONE */;

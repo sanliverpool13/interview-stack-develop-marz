@@ -60,7 +60,7 @@ const ProductsPage = () => {
         className="flex justify-center items-center w-full h-full bg-black"
         data-testid="error-container"
       >
-        <p className="text-white text-xl">
+        <p className="text-white text-3xl">
           An error occurred while fetching products.
         </p>
       </div>
